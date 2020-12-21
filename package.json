@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-systemd-example",
+  "version": "1.0.0",
+  "description": "Example NodeJS application with systemd service",
+  "main": "main.js",
+  "scripts": {
+    "build-deb": "node-deb -- main.js"
+  },
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "node-deb": "0.10.7"
+  },
+  "node_deb": {
+    "init": "systemd",
+    "entrypoints": {
+      "daemon": "main.js"
+    },
+    "install_dir": "/opt",
+    "install_strategy": "npm-install",
+    "templates": {
+      "default_variables": ".env"
+    }
+  }
+}
