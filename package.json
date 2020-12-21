@@ -4,7 +4,9 @@
   "description": "Example NodeJS application with systemd service",
   "main": "main.js",
   "scripts": {
-    "build-deb": "node-deb -- main.js"
+    "build-deb": "node-deb -- main.js",
+    "deb-install": "sudo dpkg -i nodejs-systemd-example*.deb",
+    "deb-uninstall": "sudo apt purge -y nodejs-systemd-example"
   },
   "author": "Matthias Hryniszak <padcom@gmail.com>",
   "license": "ISC",
