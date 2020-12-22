@@ -11,7 +11,8 @@
   "author": "Matthias Hryniszak <padcom@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "sd-notify": "2.8.0"
   },
   "devDependencies": {
     "node-deb": "0.10.7"
@@ -24,8 +25,9 @@
     "install_dir": "/opt",
     "install_strategy": "npm-install",
     "templates": {
-      "default_variables": ".env"
+      "default_variables": ".env",
+      "systemd_service": "nodejs-systemd-example.service"
     },
-    "dependencies": "npm"
+    "dependencies": "npm, libsystemd-dev"
   }
 }
