@@ -5,13 +5,17 @@
   "main": "main.js",
   "scripts": {
     "build-deb": "node-deb -- main.js",
+    "build-docker": "docker build -t nodejs-systemd-example .",
     "deb-install": "sudo dpkg -i nodejs-systemd-example*.deb",
-    "deb-uninstall": "sudo apt purge -y nodejs-systemd-example"
+    "deb-uninstall": "sudo apt purge -y nodejs-systemd-example",
+    "run-in-docker": "docker run -it --rm --name=nodejs-systemd-example -p 3000:3000 nodejs-systemd-example"
   },
   "author": "Matthias Hryniszak <padcom@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1",
+    "express": "4.17.1"
+  },
+  "optionalDependencies": {
     "sd-notify": "2.8.0"
   },
   "devDependencies": {

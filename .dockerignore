@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+*.deb
+.env
+.nvmrc
+.gitignore
+Dockerfile
+nodejs-systemd-example.service
