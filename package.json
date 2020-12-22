@@ -14,7 +14,8 @@
   "author": "Matthias Hryniszak <padcom@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "is-systemd": "^0.0.2"
   },
   "optionalDependencies": {
     "sd-notify": "2.8.0"

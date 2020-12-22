@@ -19,7 +19,7 @@ app.get('/kill', (req, res) => {
 const listener = app.listen(process.env.PORT || 3000, (...args) => {
   console.log('Example application listening on port', listener.address().port)
 
-  if (!process.env.RUNS_IN_DOCKER) {
+  if (require('is-systemd')) {
     // The following line tells systemd that the server has reached the point where
     // it is ready to accept connections and thus the service is fully up and running.
     //
