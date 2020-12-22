@@ -44,7 +44,11 @@ const listener = app.listen(process.env.PORT || 3000, (...args) => {
     // (see package.json, .node_deb.dependencies)
 
     const notify = require('sd-notify')
+    console.log('Notifying systemd that the process started successfully')
     notify.ready()
+    console.log('Starting watchdog timer')
     notify.startWatchdogMode(2800)
+  } else {
+    console.log('Running in Docker - skipping systemd setup')
   }
 })
