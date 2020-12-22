@@ -25,6 +25,7 @@
     "install_strategy": "npm-install",
     "templates": {
       "default_variables": ".env"
-    }
+    },
+    "dependencies": "npm"
   }
 }
