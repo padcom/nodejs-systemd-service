@@ -6,7 +6,7 @@
   "scripts": {
     "build-deb": "node-deb -- main.js",
     "build-docker": "docker build -t nodejs-systemd-example .",
-    "deb-install": "sudo dpkg -i nodejs-systemd-example*.deb",
+    "deb-install": "sudo apt install ./nodejs-systemd-example*.deb",
     "deb-uninstall": "sudo apt purge -y nodejs-systemd-example",
     "run-in-docker": "docker run -it --rm --name=nodejs-systemd-example -p 3000:3000 nodejs-systemd-example",
     "run-in-systemd": "sudo systemd-run -t --unit=nodejs-systemd-example-test ./main.js"
