@@ -15,6 +15,8 @@ ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 User={{ node_deb_user }}
 PermissionsStartOnly=true
+ProtectHome=true
+ProtectSystem=full
 
 [Install]
 WantedBy=multi-user.target
