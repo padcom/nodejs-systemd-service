@@ -15,13 +15,18 @@
   "license": "ISC",
   "dependencies": {
     "express": "4.17.1",
-    "is-systemd": "^0.0.2"
+    "is-systemd": "^0.0.2",
+    "sd-notify": "2.8.0"
   },
   "optionalDependencies": {
     "sd-notify": "2.8.0"
   },
   "devDependencies": {
     "node-deb": "0.10.7"
+  },
+  "engines": {
+    "node": ">=15.0.0",
+    "npm": "7.0.0"
   },
   "node_deb": {
     "init": "systemd",
@@ -34,6 +39,6 @@
       "default_variables": ".env",
       "systemd_service": "nodejs-systemd-example.service"
     },
-    "dependencies": "npm, libsystemd-dev"
+    "dependencies": "libsystemd-dev"
   }
 }
