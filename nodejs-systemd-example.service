@@ -6,6 +6,8 @@ Requires=network.target
 
 [Service]
 Type=notify
+TimeoutStartSec=5
+WatchdogSec=3
 EnvironmentFile=/etc/default/{{ node_deb_package_name }}
 WorkingDirectory={{ node_deb_install_dir }}/{{ node_deb_package_name }}
 ExecStart={{ node_deb_install_dir }}/{{ node_deb_package_name }}/app/{{ daemon_entrypoint }}
